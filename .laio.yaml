@@ -1,0 +1,32 @@
+---
+name: ck3mp3r
+
+startup:
+  - command: echo
+    args:
+      - "starting ck3mp3r session"
+
+shutdown:
+  - command: echo
+    args:
+      - "stopping ck3mp3r session"
+
+path: .
+
+windows:
+  - name: code
+    panes:
+      - name: Editor
+        commands:
+          - command: ^$env.EDITOR
+
+  - name: misc
+    flex_direction: row
+    panes:
+      - flex: 1
+      - flex: 1
+        path: . # optional relative or absolute path
+        flex_direction: column
+        panes:
+          - flex: 1
+          - flex: 5
